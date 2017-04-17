@@ -1,10 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 
+// styles
+import styles from '../assets/styles/header';
+
+// Components
 import { View, Text, Button } from 'react-native';
+import MenuIcon from '../components/MenuIcon';
 
 class Main extends Component {
   static navigationOptions = {
-    title: 'Main'
+    title: 'Gas Tracker',
+    headerTitleStyle: styles.title,
+    headerStyle: styles.header,
+    headerLeft: (<MenuIcon />)
   }
 
   constructor(props) {
@@ -14,12 +22,7 @@ class Main extends Component {
   render() {
     return (
       <View>
-        <Text> Map</Text>
-        <Button
-          title="Learn More"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        <MenuIcon />
       </View>
     )
   }
