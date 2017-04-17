@@ -1,19 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
-// styles
-import styles from '../assets/styles/header';
-
 // Components
 import { View, Text, Button } from 'react-native';
-import MenuIcon from '../components/MenuIcon';
+import Toolbar from '../../components/Toolbar';
 
 class Main extends Component {
-  static navigationOptions = {
-    title: 'Gas Tracker',
-    headerTitleStyle: styles.title,
-    headerStyle: styles.header,
-    headerLeft: (<MenuIcon />)
-  }
+  static navigationOptions = Toolbar;
 
   constructor(props) {
     super(props);
@@ -22,7 +14,6 @@ class Main extends Component {
   render() {
     return (
       <View>
-        <MenuIcon />
       </View>
     )
   }
