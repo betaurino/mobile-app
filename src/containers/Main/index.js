@@ -2,26 +2,29 @@ import React, { Component, PropTypes } from 'react';
 
 // Components
 import { View, Text, Button } from 'react-native';
-import Toolbar from '../../components/Toolbar';
 import MapView from '../../components/MapView';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // styles
 import styles from './style';
 
-class Main extends Component {
-  static navigationOptions = Toolbar;
+const Main = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <MapView />
+    </View>
+  );
+}
 
-  constructor(props) {
-    super(props);
-  }
+Main.navigationOptions = {
+  drawerLabel: 'Mapa',
+  drawerIcon: () => (
+    <Icon name="map" size={24} />
+  ),
+}
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <MapView />
-      </View>
-    )
-  }
+Main.propTypes = {
+  navigation: PropTypes.object.isRequired
 }
 
 export default Main;
