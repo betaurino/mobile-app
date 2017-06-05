@@ -23,6 +23,9 @@ Main.navigationOptions = {
   ),
 }
 
+
+
+
 Main.propTypes = {
   navigation: PropTypes.object.isRequired
 }

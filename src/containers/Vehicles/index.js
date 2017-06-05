@@ -7,28 +7,19 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 // style
 import styles from './style';
 
-class Vehicles extends Component {
-  static navigationOptions = {
-    drawer: () => ({
-      label: 'Vehicles',
-    }),
-    header: (navigation, defaultHeader) => ({
-      ...defaultHeader,
-      title: 'Veículos',
-    })
-  };
+const Vehicles = ({ navigation }) => {
+  return (
+    <View>
+      <Text> AQUI EH VEICULOS </Text>
+    </View>
+  );
+}
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <h1> AQUI EH VEICULOS </h1>
-      </View>
-    );
-  }
+Vehicles.navigationOptions = {
+  drawerLabel: 'Veículos',
+  drawerIcon: () => (
+    <Icon name="directions-car" size={24} />
+  ),
 }
 
 Vehicles.propTypes = {

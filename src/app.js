@@ -9,23 +9,42 @@ import styles from './containers/Main/style';
 import Main from './containers/Main';
 import Vehicles from './containers/Vehicles';
 
-const HomeNavigator = StackNavigator({
+const AppDrawer = DrawerNavigator({
   MainScreen: {
     screen: Main
-  }
-}, {
-  navigationOptions: ({navigation}) => ({
-    title: 'Gas Tracker',
-    headerTitleStyle: styles.title,
-    headerStyle: styles.header,
-    headerLeft: <DrawerButton navigation={navigation} />,
-  }),
+  },
+  VehicleScreen: {
+    screen: Vehicles
+  },
 });
 
-const MainNavigator = DrawerNavigator({
+const App = StackNavigator({
   Home: {
-    screen: HomeNavigator
+    screen: AppDrawer,
+    navigationOptions: ({navigation}) => ({
+      title: 'Gas Tracker',
+      headerTitleStyle: styles.title,
+      headerStyle: styles.header,
+      headerLeft: <DrawerButton navigation={navigation} />,
+    }),
   }
 });
 
-export default MainNavigator;
+// const HomeNavigator = StackNavigator({
+//   VehicleScreen: {
+//     screen: Vehicles
+//   },
+//   MainScreen: {
+//     screen: Main
+//   },
+// }, {
+//   navigationOptions: ({navigation}) => ({
+//     title: 'Gas Tracker',
+//     headerTitleStyle: styles.title,
+//     headerStyle: styles.header,
+//     headerLeft: <DrawerButton navigation={navigation} />,
+//   }),
+// });
+
+
+export default App;
