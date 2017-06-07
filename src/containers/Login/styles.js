@@ -2,17 +2,22 @@ import { StyleSheet } from 'react-native';
 
 export const natStyle = StyleSheet.create({
   logo: {
-    paddingTop: 50,
-    paddingLeft: 170
+    paddingTop: 30,
+    paddingLeft: 130
   },
   image: {
-    height: 300,
-    width: 300
+    height: 120,
+    width: 120
   },
   form: {
-    width: 450,
-    paddingLeft: 150,
-    paddingTop: 50
+    width: 290,
+    paddingLeft: 50,
+    paddingTop: 30,
+  },
+  error: {
+    paddingTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
 
@@ -21,10 +26,12 @@ export const baseStyle = {
     textAlign: 'center'
   },
   buttonContainer: {
-    paddingLeft: 190,
-    paddingTop: 25
+    paddingLeft: 60,
+    paddingTop: 10
   },
   button: {
-    width: 240
+    width: 240,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }
