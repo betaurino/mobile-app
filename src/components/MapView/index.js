@@ -44,6 +44,8 @@ class Map extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
+
     return (
       <MapView
         initialRegion={this.state.currentPosition}
@@ -58,12 +60,20 @@ class Map extends Component {
               title={marker.name}
               description={marker.address}
               image={MarkerIcon}
+              onCalloutPress={() => navigation.navigate('StationScreen', {
+                name: marker.name,
+                prices: marker.prices
+              })}
             />
           )
         }
       </MapView>
     );
   }
+}
+
+Map.propTypes = {
+  navigation: PropTypes.object.isRequired
 }
 
 export default Map;

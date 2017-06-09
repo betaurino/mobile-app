@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Auth from '../Auth';
 
 // Components
 import { View, Text, Button } from 'react-native';
@@ -8,12 +9,18 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 // styles
 import styles from './style';
 
-const Main = ({ navigation }) => {
-  return (
-    <View style={styles.container}>
-      <MapView />
-    </View>
-  );
+class Main extends Auth {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <MapView navigation={this.props.navigation} />
+      </View>
+    );
+  }
 }
 
 Main.navigationOptions = {
@@ -22,9 +29,6 @@ Main.navigationOptions = {
     <Icon name="map" size={24} />
   ),
 }
-
-
-
 
 Main.propTypes = {
   navigation: PropTypes.object.isRequired

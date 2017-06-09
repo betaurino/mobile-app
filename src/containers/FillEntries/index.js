@@ -4,17 +4,40 @@ import React, { Component, PropTypes } from 'react';
 import {
   View,
   Text,
-  Button
+  Button,
+  ScrollView
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import FuelEntryItem from '../../components/FuelEntryItem';
 
-const FillEntries = ({ navigation }) => {
-  return (
-    <View>
-      <Text>you'd never break the chain</Text>
-    </View>
-  )
+import {getFuelEntries} from '../../services/FuelEntries';
+
+
+class FillEntries extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  renderFuelEnries = () => {
+    return getFuelEntries().map((fe, i) => {
+      return (
+        <View key={i}>
+          <FuelEntryItem data={fe} />
+        </View>
+      )
+    })
+  }
+
+  render() {
+    return (
+      <ScrollView>
+        <View style={{ paddingLeft: 20, paddingTop: 30}}>
+          {this.renderFuelEnries()}
+        </View>
+      </ScrollView>
+    )
+  }
 }
 
 FillEntries.navigationOptions = {
